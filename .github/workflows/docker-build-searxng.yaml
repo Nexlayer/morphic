@@ -34,6 +34,12 @@ jobs:
       - name: Get current date
         run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
+      - name: Convert repository name to lowercase
+        id: lowercase
+        uses: vishalmamidi/lowercase-action@v1
+        with:
+          string: ${{ github.repository }}
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -41,6 +47,6 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/${{ github.repository }}-searxng:${{ steps.commit.outputs.short }}-${{ env.DATE }}
+          tags: ghcr.io/${{ steps.lowercase.outputs.lowercase }}-searxng:${{ steps.commit.outputs.short }}-${{ env.DATE }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
