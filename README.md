@@ -6,7 +6,7 @@
 
 This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic), enhanced with Nexlayer integration via a `nexlayer.yaml` configuration file.
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Deploying to Nexlayer](#deploying-to-nexlayer)
 2. [Modifying the Morphic `nexlayer.yaml` file](#modifying-the-morphic-nexlayeryaml-file)
