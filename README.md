@@ -1,3 +1,7 @@
+<div style="margin: 20px;">
+  <img src="docs/images/nexlayer_lowercase.png" alt="Nexlayer GitHub Banner">
+</div>
+
 # Morphic
 
 This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic), enhanced with Nexlayer integration via a `nexlayer.yaml` configuration file.
