@@ -6,17 +6,8 @@
 
 This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic), enhanced with Nexlayer integration via a `nexlayer.yaml` configuration file.
 
-1. [Nexlayer Updates to Repository](#nexlayer-updates-to-repository)
-2. [Deploying to Nexlayer](#deploying-to-nexlayer)
-3. [Accessing Your Deployment](#accessing-your-deployment)
-
-## Nexlayer Updates to Repository
-
-- `nexlayer.yaml` file added
-- Github Actions workflow file (`nexlayer-deploy.yaml`) added to allow users to easily deploy the morphic application from their `nexlayer.yaml` file to Nexlayer.
-- `Dockerfile-searxng` added to include the `searxng-setting.yml` in the SearXNG container image used in the `nexlayer.yaml` file.
-- `/public/config/models.json` file updated to query the 1.5b model from deepseek-r1 for the `katieharris/ollama:deepseek-r1` image used in the `nexlayer.yaml` file.
-- Github Actions workflow files (`docker-build-client.yaml` and `docker-build-searxng.yaml`) added to allow for rebuilding container images on changes to Morphic client code or updates to the `searxng-settings.yml` file (manual deployment only).
+1. [Deploying to Nexlayer](#deploying-to-nexlayer)
+2. [Accessing Your Deployment](#accessing-your-deployment)
 
 ## Deploying to Nexlayer
 
