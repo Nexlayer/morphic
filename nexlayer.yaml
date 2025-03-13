@@ -3,9 +3,9 @@ application:
   pods:
   - name: morphic
     path: /
-    image: katieharris/morphic-client:v0.04
+    image: ghcr.io/nexlayer/morphic:eb48a3d-2025-03-13
     vars:
-      NEXT_PUBLIC_BASE_URL: <% URL %>
+      BASE_URL: <% URL %>
       # OpenAI API key retrieved here: https://platform.openai.com/api-keys
       #OPENAI_API_KEY: [YOUR_OPENAI_API_KEY]
       # Search Configuration
@@ -74,7 +74,7 @@ application:
       size: 10Gi
       mountPath: /data
   - name: searxng
-    image: katieharris/morphic-searxng:v0.01
+    image: ghcr.io/nexlayer/morphic-searxng:eb48a3d-2025-03-13
     servicePorts:
     - 8080
     volumes:
@@ -85,7 +85,3 @@ application:
     image: katieharris/ollama:deepseek-r1
     servicePorts:
     - 11434
-    resources:
-      limits:
-        cpu: "5"
-        memory: "2Gi"
