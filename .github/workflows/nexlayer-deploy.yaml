@@ -1,0 +1,30 @@
+name: Deploy to Nexlayer
+on:
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'nexlayer.yaml'  # Trigger when this file changes
+
+jobs:
+  curl-nexlayer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get Response
+        id: get-response
+        run: |
+          RESPONSE=$(curl -X POST \
+            -H "Content-Type: text/x-yaml" \
+            --data-binary @nexlayer.yaml \
+            https://app.nexlayer.io/startUserDeployment)
+          
+          echo "response<<EOF" >> $GITHUB_OUTPUT
+          echo "$RESPONSE" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Show Response
+        run: |
+          echo "Response:"
+          echo '${{ steps.get-response.outputs.response }}'
