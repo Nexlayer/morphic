@@ -9,8 +9,8 @@ This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic)
 ## 📋 Table of Contents
 
 1. [Deploying to Nexlayer](#deploying-to-nexlayer)
-2. [Modifying the Morphic `nexlayer.yaml` file](#modifying-the-morphic--file)
-3. [`nexlayer.yaml` Pod Configuration Schema](#nexlayer.yaml-pod-configuration-schema)
+2. [Modifying the Morphic `nexlayer.yaml` file](#modifying-the-morphic-nexlayeryaml-file)
+3. [`nexlayer.yaml` Pod Configuration Schema](#nexlayeryaml-pod-configuration-schema)
 
 ## Deploying to Nexlayer
 
