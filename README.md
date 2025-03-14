@@ -33,7 +33,7 @@ The `nexlayer.yaml` file includes references to two key images from this reposit
 ### Environment Variables
 Shown below are the set environment variables for the `morphic` pod.  Some important notes:
 - The `BASE_URL` variable is set to the Nexlayer provided `<% URL %>` scriptlet.  Nexlayer will replace this scriptlet with the URL of your deployed site.
-- Connecting to other pods: variables such as `LOCAL_REDIS_URL`, `SEARXNG_API_URL` and `OLLAMA_BASE_URL` include connection strings to other pods in the deployment.  Here, each uses the Nexlayer `<podName>.pod` notation to set the hostname of the pod to connect to.  For example, `LOCAL_REDIS_URL` is set to `redis://redis.pod:6379` where `redis` is the name given to the pod we want to connect to.  `redis.pod` in turn provides the hostname at which we can reach the `redis` pod at.
+- Connecting to other pods: variables such as `LOCAL_REDIS_URL`, `SEARXNG_API_URL` and `OLLAMA_BASE_URL` include connection strings to other pods in the deployment.  Here, each uses the Nexlayer `<pod-name>.pod` notation to set the hostname of the pod to connect to.  For example, `LOCAL_REDIS_URL` is set to `redis://redis.pod:6379` where `redis` is the name given to the pod we want to connect to.  `redis.pod` in turn provides the hostname at which we can reach the `redis` pod at.
 
 ### `nexlayer.yaml`
 ```yaml
