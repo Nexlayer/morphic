@@ -8,15 +8,20 @@ This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic)
 
 ## Table of Contents
 
-1. [Deploying to Nexlayer](#deploying-to-nexlayer)
+1. [Demo Morphic](#demo-morphic)
 2. [Modifying the Morphic `nexlayer.yaml` file](#modifying-the-morphic-nexlayeryaml-file)
 3. [`nexlayer.yaml` Pod Configuration Schema](#nexlayeryaml-pod-configuration-schema)
 
-## Deploying to Nexlayer
+## Demo Morphic
 
+Ready to see Morphic in action? Follow these simple steps to demo the application:
+1. **Fork this repository** to create a personal copy.
+2. **Run the following cURL command** in the morphic directory. This will generate a URL to view your Morphic application:
 ```bash
 curl -X POST https://app.nexlayer.io/startUserDeployment -H "Content-type: text/x-yaml" --data-binary @nexlayer.yaml
 ```
+
+**Launch Your Demo**: Once deployed, click on the provided URL to explore your Morphic application live! NOTE: The Ollama Deepseek-r1 model is provided in this demo.  To use other models, please see the `nexlayer.yaml` file.
 
 ## Modifying the Morphic `nexlayer.yaml` file
 
