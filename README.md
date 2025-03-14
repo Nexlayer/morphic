@@ -9,7 +9,7 @@ This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic)
 ## Table of Contents
 
 1. [Demo Morphic](#demo-morphic)
-2. [Modifying the Morphic `nexlayer.yaml` file](#the-morphic-nexlayeryaml-file)
+2. [The Morphic `nexlayer.yaml` file](#the-morphic-nexlayeryaml-file)
 3. [`nexlayer.yaml` Pod Configuration Schema](#nexlayeryaml-pod-configuration-schema)
 
 ## Demo Morphic
