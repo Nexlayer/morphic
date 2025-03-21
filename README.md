@@ -1,5 +1,5 @@
 <div style="margin: 20px;">
-  <img src="docs/images/nexlayer_lowercase.png" alt="Nexlayer GitHub Banner">
+  <img src="docs/images/nexlayer.png" alt="Nexlayer GitHub Banner">
 </div>
 
 # Morphic
