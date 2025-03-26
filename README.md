@@ -1,5 +1,5 @@
 <div style="margin: 20px;">
-  <img src="docs/images/nexlayer_lowercase.png" alt="Nexlayer GitHub Banner">
+  <img src="docs/images/nexlayer.png" alt="Nexlayer GitHub Banner">
 </div>
 
 # Morphic
@@ -8,19 +8,32 @@ This repository is a fork of [miurla/morphic](https://github.com/miurla/morphic)
 
 ## Table of Contents
 
-1. [Deploying to Nexlayer](#deploying-to-nexlayer)
-2. [Modifying the Morphic `nexlayer.yaml` file](#modifying-the-morphic-nexlayeryaml-file)
+1. [Demo Morphic](#demo-morphic)
+2. [The Morphic `nexlayer.yaml` file](#the-morphic-nexlayeryaml-file)
 3. [`nexlayer.yaml` Pod Configuration Schema](#nexlayeryaml-pod-configuration-schema)
 
-## Deploying to Nexlayer
+## Demo Morphic
 
+Ready to see Morphic in action? Follow these simple steps to demo the application:
+1. **Fork this repository** to create a personal copy.
+2. **Run the following cURL command** in the morphic directory. This will generate a URL to view your Morphic application:
 ```bash
 curl -X POST https://app.nexlayer.io/startUserDeployment -H "Content-type: text/x-yaml" --data-binary @nexlayer.yaml
 ```
 
-## Modifying the Morphic `nexlayer.yaml` file
+**Launch Your Demo**: Once deployed, click on the provided URL to explore your Morphic application live! NOTE: The Ollama Deepseek-r1 model is provided in this demo.  To use other models, please see the `nexlayer.yaml` file.
 
-The following environment variables can be uncommented and modified to provide additional functionality to your Morphic deployment:
+## The Morphic `nexlayer.yaml` File
+
+### Important Note on Images Used
+The `nexlayer.yaml` file includes references to two key images from this repository: the `morphic` client image and the `morphic-searxng` image.  
+- The `morphic-searxng` image packages the [`searxng-settings.yml`](https://github.com/Nexlayer/morphic/blob/main/searxng-settings.yml) and [`searxng-limiter.toml`](https://github.com/Nexlayer/morphic/blob/update/README/searxng-limiter.toml) files into the `searxng/searxng:2025.3.11-3fe602a46` image for cloud deployment.
+- The `morphic` image includes an updated [`models.json`](https://github.com/Nexlayer/morphic/blob/main/public/config/models.json) file which allows for the deepseek-r1 1.5b model to be queried from the `katieharris/ollama:deepseek-r1` image (also included in the `nexlayer.yaml` file).
+
+### Environment Variables
+Shown below are the set environment variables for the `morphic` pod.  Some important notes:
+- The `BASE_URL` variable is set to the Nexlayer provided `<% URL %>` scriptlet.  Nexlayer will replace this scriptlet with the URL of your deployed site.
+- Connecting to other pods: variables such as `LOCAL_REDIS_URL`, `SEARXNG_API_URL` and `OLLAMA_BASE_URL` include connection strings to other pods in the deployment.  Here, each uses the Nexlayer `<pod-name>.pod` notation to set the hostname of the pod to connect to.  For example, `LOCAL_REDIS_URL` is set to `redis://redis.pod:6379` where `redis` is the name given to the pod we want to connect to.  `redis.pod` in turn provides the hostname at which we can reach the `redis` pod at.
 
 ### `nexlayer.yaml`
 ```yaml
@@ -83,6 +96,8 @@ vars:
   SEARXNG_TIME_RANGE: None
   SEARXNG_SAFESEARCH: 0
 ```
+
+Want more information?  View the Nexlayer template documentation [here](https://github.com/Nexlayer/templates/blob/main/README.md).
 
 ## `nexlayer.yaml` Pod Configuration Schema
 | Key | Definition | Why it matters | Examples |
