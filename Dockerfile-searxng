@@ -1,4 +1,4 @@
-FROM searxng/searxng:2025.3.11-3fe602a46
+FROM searxng/searxng:2025.3.25-4dfc47584
 
 # Copy in searxng settings file
 COPY searxng-settings.yml /etc/searxng/settings.yml
