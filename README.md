@@ -27,7 +27,7 @@ curl -X POST https://app.nexlayer.io/startUserDeployment -H "Content-type: text/
 
 ### Important Note on Images Used
 The `nexlayer.yaml` file includes references to two key images from this repository: the `morphic` client image and the `morphic-searxng` image.  
-- The `morphic-searxng` image packages the [`searxng-setting.yml`](https://github.com/Nexlayer/morphic/blob/main/searxng-settings.yml) file into the `searxng/searxng:2025.3.11-3fe602a46` image for cloud deployment.
+- The `morphic-searxng` image packages the [`searxng-settings.yml`](https://github.com/Nexlayer/morphic/blob/main/searxng-settings.yml) and [`searxng-limiter.toml`](https://github.com/Nexlayer/morphic/blob/update/README/searxng-limiter.toml) files into the `searxng/searxng:2025.3.11-3fe602a46` image for cloud deployment.
 - The `morphic` image includes an updated [`models.json`](https://github.com/Nexlayer/morphic/blob/main/public/config/models.json) file which allows for the deepseek-r1 1.5b model to be queried from the `katieharris/ollama:deepseek-r1` image (also included in the `nexlayer.yaml` file).
 
 ### Environment Variables
