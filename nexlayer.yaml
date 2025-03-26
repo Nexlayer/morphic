@@ -52,16 +52,6 @@ application:
       #------------------------------------------------------------------------------
       SEARCH_API: searxng
       SEARXNG_API_URL: http://searxng.pod:8080
-      SEARXNG_SECRET: "1hsfl3++1FEgQjwuDK0rTg5wRlv1bIFVRuVfnKCQ9wM="  # generate a secret key e.g. openssl rand -base64 32
-      SEARXNG_PORT: 8080
-      SEARXNG_BIND_ADDRESS: "0.0.0.0"
-      SEARXNG_IMAGE_PROXY: true
-      SEARXNG_LIMITER: false
-      SEARXNG_DEFAULT_DEPTH: basic
-      SEARXNG_MAX_RESULTS: 50
-      SEARXNG_ENGINES: "google,bing,duckduckgo,wikipedia"
-      SEARXNG_TIME_RANGE: None
-      SEARXNG_SAFESEARCH: 0
     servicePorts:
     - 3000
   - name: redis
@@ -74,9 +64,20 @@ application:
       size: 10Gi
       mountPath: /data
   - name: searxng
-    image: ghcr.io/nexlayer/morphic-searxng:ba1758f-2025-03-26
+    image: ghcr.io/nexlayer/morphic-searxng:9ded7d4-2025-03-26
     servicePorts:
     - 8080
+    vars:
+      SEARXNG_SECRET: "1hsfl3++1FEgQjwuDK0rTg5wRlv1bIFVRuVfnKCQ9wM="  # generate a secret key e.g. openssl rand -base64 32
+      SEARXNG_PORT: 8080
+      SEARXNG_BIND_ADDRESS: "0.0.0.0"
+      SEARXNG_IMAGE_PROXY: true
+      SEARXNG_LIMITER: false
+      SEARXNG_DEFAULT_DEPTH: basic
+      SEARXNG_MAX_RESULTS: 50
+      SEARXNG_ENGINES: "google,bing,duckduckgo,wikipedia"
+      SEARXNG_TIME_RANGE: None
+      SEARXNG_SAFESEARCH: 0
     volumes:
     - name: searxng-data
       size: 10Gi
