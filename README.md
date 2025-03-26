@@ -85,16 +85,6 @@ vars:
   #------------------------------------------------------------------------------
   SEARCH_API: searxng
   SEARXNG_API_URL: http://searxng.pod:8080
-  SEARXNG_SECRET: "1hsfl3++1FEgQjwuDK0rTg5wRlv1bIFVRuVfnKCQ9wM="  # generate a secret key e.g. openssl rand -base64 32
-  SEARXNG_PORT: 8080
-  SEARXNG_BIND_ADDRESS: "0.0.0.0"
-  SEARXNG_IMAGE_PROXY: true
-  SEARXNG_LIMITER: false
-  SEARXNG_DEFAULT_DEPTH: basic
-  SEARXNG_MAX_RESULTS: 50
-  SEARXNG_ENGINES: "google,bing,duckduckgo,wikipedia"
-  SEARXNG_TIME_RANGE: None
-  SEARXNG_SAFESEARCH: 0
 ```
 
 Want more information?  View the Nexlayer template documentation [here](https://github.com/Nexlayer/templates/blob/main/README.md).
