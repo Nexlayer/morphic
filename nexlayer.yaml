@@ -74,7 +74,7 @@ application:
       size: 10Gi
       mountPath: /data
   - name: searxng
-    image: ghcr.io/nexlayer/morphic-searxng:3aecd0b-2025-03-26
+    image: ghcr.io/nexlayer/morphic-searxng:95231bf-2025-03-26 
     servicePorts:
     - 8080
     volumes:
